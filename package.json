@@ -1,0 +1,18 @@
+{
+  "name": "graphqlcache-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cacheman": "^2.2.1",
+    "composable-middleware": "^0.3.0",
+    "express-interceptor": "^1.2.0",
+    "sha1": "^1.1.1"
+  }
+}
