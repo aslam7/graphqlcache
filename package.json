@@ -1,18 +1,32 @@
 {
   "name": "graphqlcache-server",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "cache",
+    "graphql",
+    "redis",
+    "store",
+    "ttl"
+  ],
+  "author": "Aslam <aslam.iiitb407@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "cacheman": "^2.2.1",
     "composable-middleware": "^0.3.0",
     "express-interceptor": "^1.2.0",
     "sha1": "^1.1.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aslam7/graphqlcache.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aslam7/graphqlcache/issues"
+  },
+  "homepage": "https://github.com/aslam7/graphqlcache"
 }
