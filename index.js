@@ -1,6 +1,6 @@
 'use strict';
 
-import compose from 'composable-middleware';
+const compose = require('composable-middleware');
 const interceptor = require('express-interceptor');
 const generateKey = require('./generate-key');
 let cache;
