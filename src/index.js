@@ -41,7 +41,7 @@ module.exports.intercept = interceptor((req, res) => {
 module.exports.sendIfCached = function(ttl) {
   return compose()
     .use((req, res, next) => {
-      if(!ttl) ttl = 60;
+      if (!ttl) ttl = 60;
       req.gttl = ttl;
       if (!req.body || !req.body.query || isMutation(req.body.query)) {
         return next();
