@@ -54,8 +54,8 @@ module.exports.sendIfCached = function() {
       if (query.substr(0, 5) === 'query') query = query.substr(5);
       const key = generateKey(query);
       return cache.get(key, (err, cachedResults) => {
-        if(err) {
-          console.error(err)
+        if (err) {
+          console.error(err);
           return next();
         }
         if (!cachedResults) {
