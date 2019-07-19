@@ -38,10 +38,14 @@ module.exports.intercept = interceptor((req, res) => {
     }
   };
 });
-module.exports.sendIfCached = function(ttl) {
+module.exports.sendIfCached = function(options={}) {
   return compose()
     .use((req, res, next) => {
-      if (!ttl) ttl = 60;
+      let { ttl, cacheData } = options;
+      if(cacheData !== false) cacheData = true;
+      if(!cacheData) return next();
+      if(!ttl && ttl !== 0) ttl = 60;
+      if(typeof(ttl) !== 'number' || ttl < 0) throw new Error('Invalid cache time, Please provide a ttl value graterthan or equal to 0')
       req.gttl = ttl;
       if (!req.body || !req.body.query || isMutation(req.body.query)) {
         return next();
