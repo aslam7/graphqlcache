@@ -4,7 +4,7 @@ const Cacheman = require('cacheman');
 const noop = () => {};
 
 function Cache(options) {
-  this._cache = new Cacheman('cachegoose-cache', options);
+  this._cache = new Cacheman('graphql-cache', options);
 }
 
 Cache.prototype.get = function(key, cb = noop) {
