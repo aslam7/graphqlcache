@@ -27,8 +27,7 @@ module.exports.intercept = interceptor((req, res) => {
       if (
         req.shouldIntercept &&
         req.body &&
-        req.body.query &&
-        res.get('Content-Type') === 'application/json'
+        req.body.query
       ) return true;
       return false;
     },
