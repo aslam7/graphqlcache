@@ -26,4 +26,8 @@ graphqlcache({
 
 app.use(graphqlcache.intercept)
 
-app.use('/graphql', graphqlcache.sendIfCached(), graphqlExpress({ schema }));
+const options = {
+   ttl: 86400 // Cache time out in seconds default is 60 seconds.
+   cacheData: true /* Can turn on/off cached data response any time, default true */
+}
+app.use('/graphql', graphqlcache.sendIfCached(options), graphqlExpress({ schema }));
