@@ -11,11 +11,12 @@ graphqlcache-server module will let you cache graphql query data, if it finds th
 import express from 'express'
 import { graphqlExpress } from 'apollo-server-express';
 import { graphql } from 'graphql';
+const bodyParser = require('body-parser')
 
 var graphqlcache = require('graphqlcache-server');
 
 const app = express();
-
+app.use(bodyParser.json()) /* must parse the body */
 
 graphqlcache({
   engine: 'redis',    /* If you don't specify the redis engine,      */
