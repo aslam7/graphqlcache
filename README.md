@@ -32,3 +32,5 @@ const options = {
    cacheData: true /* Can turn on/off cached data response any time, default true */
 }
 app.use('/graphql', graphqlcache.sendIfCached(options), graphqlExpress({ schema }));
+
+// Enjoy.
